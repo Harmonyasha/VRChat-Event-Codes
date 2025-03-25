@@ -9,20 +9,44 @@ This document is a collection of event codes and their details that I have disco
 - **Data Type**: `BYTE[]`
 - **Details**: Represents voice data as an array of bytes.
 
-### Code: 2, 3, 4, 5
+### Code: 4
 - **Description**: Master Sync
-- **Data Type**: `INT32` or `FLOAT` (assumed based on "Hz")
-- **Details**: Synchronization data for the master, likely in Hertz (frequency), across four event codes.
+- **Data Type**: `INT32`
+- **Details**: Synchronization data for the master.
 
 ### Code: 6
 - **Description**: RPC/Udon Trigger
 - **Data Type**: `BYTE[]` (convertible to `String`)
+- Examples of decode
+ ```
+Bad code example but its work
+        public static string ParseEV6(byte[] packet)
+        {
+            if (packet == null || packet.Length < 26)
+            {
+                return "";
+            }
+            string parsedString = Encoding.UTF8.GetString(packet, 26, packet.Length - 26);
+            parsedString = parsedString.Replace("\0", "").Replace("\t", " ").Replace("\n", "").Replace("\r", "").Trim();
+            parsedString = Regex.Replace(parsedString, @"[\x00-\x1F]", "");
+            return parsedString;
+        }
+Out Examples
+>> UdonSyncRunProgramAsRPC NameOfUdon
+(Camera) >> ChangeVisibility
+(Camera) >> TimerBloop
+(Camera) >> PhotoCapture
+>> PlayEmoteRPC
+>> SanityCheck!
+>> nController  CancelRPC
+
+ ```
 - **Details**: Data for an RPC call or Udon trigger, stored as bytes that can be converted into a string.
 
 ### Code: 7
 - **Description**: Serialization Unreliable (Object and Movement Sync)
 - **Data Type**: `BYTE[]`
-- **Details**: Unreliable serialization data for object and movement synchronization, transmitted as an array of bytes.
+- **Details**: Unreliable serialization data for object and movement synchronization, transmitted as an array of bytes also you can use it as movement just send EV7 instead of EV12.
 
 ### Code: 8
 - **Description**: Voice Listeners
@@ -50,17 +74,17 @@ This document is a collection of event codes and their details that I have disco
 - **Details**: Synchronization data for avatar parameters, stored as bytes.
 
 ### Code: 16
-- **Description**: Image Print Sync
+- **Description**: Object Sync 
 - **Data Type**: `BYTE[]`
 - **Details**: Data for synchronizing image physic or movement, stored as bytes.
 
 ### Code: 17
-- **Description**: Unknown
+- **Description**: VRCPickup
 - **Data Type**: `BYTE[]`
-- **Details**: Unknown purpose, stored as an array of bytes.
+- **Details**: Same as 12 but for Pickups.
 
 ### Code: 20
-- **Description**: Unknown
+- **Description**: Join World
 - **Sender**: `0`
 - **Data Type**: `NULL`
 - **Details**: No data provided.
@@ -122,25 +146,23 @@ inVRMode (String) : True Or False
 -    **Details**: Indicates whether the user is typing in the chatbox.
 
 ### Code: 51
--    **Description**: Unknown Array
+-    **Description**: OnLoaded
 --   **Sender**:`0`
 -    **Data Type**: `Object[]`
    - **Values**:
 ```
-129(Int32)
+129(Int32) -your photonid?
 True(Boolean)
 ```
--    **Contents**: Random 32-bit integer, purpose unknown.
   
   ### Code: 60
--    **Description**: IDK Possible EAC Connection
--    **Data Type**: `Int32[]`
--    **Details**: Array of integers, possibly related to Easy Anti-Cheat (EAC) connection status.
+-    **Description**: PhysBonesPermissions 
+-    **Data Type**: `Byte[]` or `Int32[]` not sure
 
   ### Code: 66
--    **Description**: Unknown (OpRaise Only)
+-    **Description**: EACHeartBeat (OpRaise Only)
 -    **Data Type**: `Byte[]`
--    **Details**: Byte array, purpose unclear, only used with `OpRaise`.
+-    **Details**: An array of integers associated with the EAC connection.
 
   ### Code: 71
 -    **Description**: Emoji
@@ -165,7 +187,7 @@ avatarToken (String) : eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9YP465-68jb2e6Qp
 ```
 -    **Details**: Data for allowing download of a private avatar.
 
-  ### Code: 74
+  ### Code: 74 OnEvent
 -    **Description**: Unknown Event
 -    **Sender**: `0`
 -    **Data Type**: `Dictionary<byte, Il2CppSystem.Object>`
@@ -178,8 +200,27 @@ avatarToken (String) : eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9YP465-68jb2e6Qp
 ```
 -    **Details**: Unknown event with a dictionary of byte-to-object mappings.
 
+  ### Code: 74 OpRaise
+-    **Description**: SpawnPortal
+-    **Sender**: `0`
+-    **Data Type**: `Dictionary<byte, Il2CppSystem.Object>`
+-    **Contents**
+  ```
+0(Byte) : System.Runtime.Serialization.TypeLoadExceptionHolder(TypeLoadExceptionHolder)
+132(Byte) : 6saucwx9(String)
+1(Byte) : System.Runtime.Serialization.TypeLoadExceptionHolder(TypeLoadExceptionHolder)
+6(Byte) : 30(Int32)
+7(Byte) : False(Boolean)
+2(Byte) : usr_YourPlayerId(String)
+8(Byte) : System.Runtime.Serialization.TypeLoadExceptionHolder(TypeLoadExceptionHolder)
+4(Byte) : System.Byte[](Byte[])
+5(Byte) : System.Byte[](Byte[])
+```
+-    **Details**: None
+
+
   ### Code: 202
--    **Description**: Sanity Check???
+-    **Description**: Instantiate 
 -    **Data Type**: `Hashtable`
 -    **Contents**:
   ```
@@ -188,18 +229,18 @@ avatarToken (String) : eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9YP465-68jb2e6Qp
 0 (Byte) : VRCPlayer (String)
 7 (Byte) : 13000001 (Int32)
 ```
--    **Details**: Sanity check event with a hashtable of various data.
+-    **Details**: Instantiate  event with a hashtable of various data.
 
   ### Code: 226
--    **Description**: Unknown (OnEvent)
+-    **Description**: AppStats 
 -    **Sender**: `-1`
 -    **Data Type**: `NULL`
--    **Details**: Unknown event triggered with no parameters.
+-    **Details**: AppStats triggered with no parameters.
 
   ### Code: 253
--    **Description**: Unknown (OnEvent)
+-    **Description**: SetProperties
 -    **Data Type**: `NULL`
--    **Details**: Unknown event triggered with no parameters.
+-    **Details**: SetProperties triggered with no parameters.
 
   ### Code: 254
 -    **Description**: Player Leave
