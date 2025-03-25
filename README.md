@@ -52,7 +52,7 @@ This document is a collection of event codes and their details that I have disco
 ### Code: 16
 - **Description**: Image Print Sync
 - **Data Type**: `BYTE[]`
-- **Details**: Data for synchronizing image printing, stored as bytes.
+- **Details**: Data for synchronizing image physic or movement, stored as bytes.
 
 ### Code: 17
 - **Description**: Unknown
@@ -100,6 +100,10 @@ This document is a collection of event codes and their details that I have disco
 ### Code: 42
 -    **Description**: VR Mode State Broadcast
 -    **Data Type**: `Hashtable`
+-    **Content**:
+```
+inVRMode (String) : True Or False
+```
 -    **Details**: Broadcasts the VR mode state (e.g., whether the player is in VR mode) to others.
 
   ### Code: 43
@@ -148,7 +152,7 @@ True(Boolean)
 ```
 -    **Details**: Dictionary mapping byte keys to emoji-related data.
 
-    ### Code: 73
+  ### Code: 73
 -    **Description**: Allow Download Private Avatar
 -    **Data Type**: `Hashtable`
 -    **Contents**
@@ -174,7 +178,7 @@ avatarToken (String) : eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9YP465-68jb2e6Qp
 ```
 -    **Details**: Unknown event with a dictionary of byte-to-object mappings.
 
-    ### Code: 202
+  ### Code: 202
 -    **Description**: Sanity Check???
 -    **Data Type**: `Hashtable`
 -    **Contents**:
@@ -197,12 +201,12 @@ avatarToken (String) : eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9YP465-68jb2e6Qp
 -    **Data Type**: `NULL`
 -    **Details**: Unknown event triggered with no parameters.
 
-    ### Code: 254
+  ### Code: 254
 -    **Description**: Player Leave
 -    **Data Type**: `NULL`
 -    **Details**: Event indicating a player has left, no additional data.
 
-    ### Code: 255
+  ### Code: 255
 -    **Description**: Player Join
 -    **Data Type**: `NULL`
 -    **Details**: Event indicating a player has joined, no additional data.
