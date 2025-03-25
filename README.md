@@ -76,7 +76,7 @@ This document is a collection of event codes and their details that I have disco
 ### Code: 16
 - **Description**: Object Sync 
 - **Data Type**: `BYTE[]`
-- **Details**: Data for synchronizing image physic or movement, stored as bytes.
+
 
 ### Code: 17
 - **Description**: VRCPickup
