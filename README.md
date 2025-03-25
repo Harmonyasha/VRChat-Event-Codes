@@ -18,8 +18,8 @@ This document is a collection of event codes and their details that I have disco
 - **Description**: RPC/Udon Trigger
 - **Data Type**: `BYTE[]` (convertible to `String`)
 - Examples of decode
- ```
-Bad code example but its work
+ ```c#
+//Bad code example but its work
         public static string ParseEV6(byte[] packet)
         {
             if (packet == null || packet.Length < 26)
@@ -31,14 +31,14 @@ Bad code example but its work
             parsedString = Regex.Replace(parsedString, @"[\x00-\x1F]", "");
             return parsedString;
         }
-Out Examples
->> UdonSyncRunProgramAsRPC NameOfUdon
-(Camera) >> ChangeVisibility
-(Camera) >> TimerBloop
-(Camera) >> PhotoCapture
->> PlayEmoteRPC
->> SanityCheck!
->> nController  CancelRPC
+//Out Examples
+//>> UdonSyncRunProgramAsRPC NameOfUdon
+//(Camera) >> ChangeVisibility
+//(Camera) >> TimerBloop
+//(Camera) >> PhotoCapture
+//>> PlayEmoteRPC
+//>> SanityCheck!
+//>> nController  CancelRPC
 
  ```
 - **Details**: Data for an RPC call or Udon trigger, stored as bytes that can be converted into a string.
