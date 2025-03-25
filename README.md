@@ -89,6 +89,16 @@ This document is a collection of event codes and their details that I have disco
 - **Data Type**: `NULL`
 - **Details**: No data provided.
 
+### Code: 21 OnEvent
+- **Description**: Idk
+- **Data Type**: `Int32[]`
+- Content
+```
+164(Int32)
+0(Int32)
+```
+- **Details**: No data provided.
+
 ### Code: 22
 - **Description**: Take Ownership
 - **Data Type**: Not specified
