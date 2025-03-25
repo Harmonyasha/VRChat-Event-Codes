@@ -83,7 +83,7 @@ This document is a collection of event codes and their details that I have disco
 - **Data Type**: `BYTE[]`
 - **Details**: Same as 12 but for Pickups.
 
-### Code: 20
+### Code: 20 OnEvent
 - **Description**: Join World
 - **Sender**: `0`
 - **Data Type**: `NULL`
@@ -94,7 +94,7 @@ This document is a collection of event codes and their details that I have disco
 - **Data Type**: Not specified
 - **Details**: Event to take ownership of an object or entity.
 
-### Code: 24
+### Code: 24 OnEvent
 - **Description**: Unknown Array
 - **Sender**: `0`
 - **Data Type**: `Object[]`
@@ -110,9 +110,9 @@ This document is a collection of event codes and their details that I have disco
 -    **Data Type**: System.Boolean
 -    **Details**: Boolean flag, possibly indicating whether interaction is allowed (purpose unclear).
   
-### Code: 28
+### Code: 28 OnEvent
 -    **Description**: IDK Random Numbers
---   **Sender**:`0`
+-   **Sender**:`0`
 -    **Data Type**: `INT32`
 -    **Details**: Random 32-bit integer, purpose unknown.
 
@@ -145,7 +145,7 @@ inVRMode (String) : True Or False
 ```
 -    **Details**: Indicates whether the user is typing in the chatbox.
 
-### Code: 51
+### Code: 51 OnEvent
 -    **Description**: OnLoaded
 --   **Sender**:`0`
 -    **Data Type**: `Object[]`
@@ -159,7 +159,7 @@ True(Boolean)
 -    **Description**: PhysBonesPermissions 
 -    **Data Type**: `Byte[]` or `Int32[]` not sure
 
-  ### Code: 66
+  ### Code: 66 OpRaise
 -    **Description**: EACHeartBeat (OpRaise Only)
 -    **Data Type**: `Byte[]`
 -    **Details**: An array of integers associated with the EAC connection.
@@ -174,7 +174,7 @@ True(Boolean)
 ```
 -    **Details**: Dictionary mapping byte keys to emoji-related data.
 
-  ### Code: 73 ONEVENT
+  ### Code: 73 OnEvent
 -    **Description**: Allow Download Private Avatar
 -    **Data Type**: `Hashtable`
 -    **Contents**
@@ -187,7 +187,7 @@ avatarToken (String) : eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9YP465-68jb2e6Qp
 ```
 -    **Details**: Data for allowing download of a private avatar.
 
-  ### Code: 73 OPRAISE
+  ### Code: 73 OpRaise
 -    **Description**: Allow Download Private Avatar
 -    **Data Type**: `String`
 -    **Contents**
