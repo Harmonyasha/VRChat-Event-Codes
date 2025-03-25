@@ -202,7 +202,6 @@ avatarToken (String) : eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9YP465-68jb2e6Qp
 
   ### Code: 74 OpRaise
 -    **Description**: SpawnPortal
--    **Sender**: `0`
 -    **Data Type**: `Dictionary<byte, Il2CppSystem.Object>`
 -    **Contents**
   ```
