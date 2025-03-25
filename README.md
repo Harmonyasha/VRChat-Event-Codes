@@ -174,7 +174,7 @@ True(Boolean)
 ```
 -    **Details**: Dictionary mapping byte keys to emoji-related data.
 
-  ### Code: 73
+  ### Code: 73 ONEVENT
 -    **Description**: Allow Download Private Avatar
 -    **Data Type**: `Hashtable`
 -    **Contents**
@@ -186,6 +186,16 @@ avatarTokenExp (String) : 1742920646 (Int64)
 avatarToken (String) : eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9YP465-68jb2e6Qp.uCw84wta_jfjRMsmwotfXSrt6IdzqGUjz3G-y1DUwjK5hTdFX15-DOXqLQMLL5_D0Y6l7C6U-a4hMWW-LH_lkk0ADschZlAJRliJA1Z1QDLe-ZLKuR0fheN79lHLcTtL9MmVEveTitkVNr2mONDq17x-d6BdLpS4TBe4S4S8CL9FEtzaexhciINFAS5JgEpWQmx250P6F6es5dnvX-_dBhQbSNk_ulf12ZB4J4EZ.y-0jcKAHqOt7rxZUWNy2gw (String)
 ```
 -    **Details**: Data for allowing download of a private avatar.
+
+  ### Code: 73 OPRAISE
+-    **Description**: Allow Download Private Avatar
+-    **Data Type**: `String`
+-    **Contents**
+  ```
+file_90cbd832-2e87-4b5a-b7a7-e70390767ffe:11:security
+```
+-    **Details**: Data for allowing download of a private avatar.
+
 
   ### Code: 74 OnEvent
 -    **Description**: Unknown Event
