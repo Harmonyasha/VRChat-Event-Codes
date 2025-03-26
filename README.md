@@ -159,7 +159,7 @@ inVRMode (String) : True Or False
 
 ### Code: 51 OnEvent
 -    **Description**: OnLoaded
---   **Sender**:`0`
+-   **Sender**:`0`
 -    **Data Type**: `Object[]`
    - **Values**:
 ```
@@ -169,7 +169,7 @@ True(Boolean)
 
 ### Code: 53 OnEvent
 -    **Description**: Products
---   **Sender**:`0`
+-   **Sender**:`0`
 -    **Data Type**: `Object[]`
    - **Values**:
 ```
