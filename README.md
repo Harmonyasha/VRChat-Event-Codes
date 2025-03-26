@@ -131,7 +131,7 @@ This document is a collection of event codes and their details that I have disco
 -    **Data Type**: `Dictinary<object,object>()`
 -    **Details**: Event related to a moderation action.
 
-### Code: 42
+### Code: 42 OpRaise
 -    **Description**: VR Mode State Broadcast
 -    **Data Type**: `Hashtable`
 -    **Content**:
@@ -139,6 +139,8 @@ This document is a collection of event codes and their details that I have disco
 inVRMode (String) : True Or False
 ```
 -    **Details**: Broadcasts the VR mode state (e.g., whether the player is in VR mode) to others.
+
+
 
   ### Code: 43
 -    **Description**: ChatBox Message
