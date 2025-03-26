@@ -166,6 +166,20 @@ inVRMode (String) : True Or False
 129(Int32) -your photonid?
 True(Boolean)
 ```
+
+### Code: 53 OnEvent
+-    **Description**: Products
+--   **Sender**:`0`
+-    **Data Type**: `Object[]`
+   - **Values**:
+```
+  ":20F/",
+  "prod_c94d0f90-db70-4454-b06d-432f71e68778",
+  [
+   "Player UserName1",
+   "Player UserName2"
+  ]
+```
   
   ### Code: 60
 -    **Description**: PhysBonesPermissions 
