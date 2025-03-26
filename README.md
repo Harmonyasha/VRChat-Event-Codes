@@ -216,7 +216,7 @@ file_90cbd832-2e87-4b5a-b7a7-e70390767ffe:11:security
 
 
   ### Code: 74 OnEvent <br>(Thanks to Minunn for giving info about that event.)
--    **Description**: Portal,Pedestrial,Sticker,Print,Vrc+ gift drop 
+-    **Description**: Portal,Pedestrial,Sticker,Print,Vrc+ gift drop,Drone Spawn
 -    **Sender**: `0`
 -    **Portal Content (Soon)**
   ```
@@ -278,7 +278,49 @@ System.InvalidCastException: Object must implement IConvertible.
 "130":42
 "131":30
 ```
+-    **Drone Spawn**
+  ```
+Part1
+1(Byte) : 0(Byte)
+0(Byte) : 5(Byte)
+3(Byte) : usr_6e4226ed-64c5-400c-a818-8ff89b23f695(String)
+2(Byte) : b6e2fa49-2077-4475-bacb-d6dc3c157ed3(String)
+4(Byte) : System.Byte[](Byte[])
+5(Byte) : System.Byte[](Byte[])
+9(Byte) : False(Boolean)
+128(Byte) : 43710012(Int32)
+129(Byte) : System.Byte[](Byte[])
+130(Byte) : System.Byte[](Byte[])
+131(Byte) : System.Byte[](Byte[])
 
+Part2
+1(Byte) : 0(Byte)
+0(Byte) : 6(Byte)
+3(Byte) : usr_6e4226ed-64c5-400c-a818-8ff89b23f695(String)
+2(Byte) : e2827a6f-c923-4fcc-9848-546a57864f88(String)
+4(Byte) : System.Byte[](Byte[])
+5(Byte) : System.Byte[](Byte[])
+9(Byte) : False(Boolean)
+128(Byte) : 43710013(Int32)
+129(Byte) : 2(Byte)
+130(Byte) : 43710012(Int32)
+133(Byte) : 0(Byte)
+
+```
+-    **Drone Despawn**
+  ```
+Part1
+1(Byte) : 1(Byte)
+0(Byte) : 5(Byte)
+3(Byte) : usr_6e4226ed-64c5-400c-a818-8ff89b23f695(String)
+2(Byte) : e49e42fc-2b63-41b5-986f-b6b80d3996f1(String)
+
+Part2
+1(Byte) : 1(Byte)
+0(Byte) : 6(Byte)
+3(Byte) : usr_6e4226ed-64c5-400c-a818-8ff89b23f695(String)
+2(Byte) : 6f6b2982-ce14-4ec6-b9b8-93683ea4bc2f(String)
+```
   ### Code: 74 OpRaise
 -    **Description**: SpawnPortal
 -    **Data Type**: `Dictionary<byte, Il2CppSystem.Object>`
