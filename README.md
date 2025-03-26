@@ -184,6 +184,12 @@ True(Boolean)
 0 (Byte) : System.Runtime.Serialization.TypeLoadExceptionHolder (TypeLoadExceptionHolder)
 2 (Byte) : EmojiID (Int32)
 ```
+-    **CustomEmoji**
+  ```
+0(Byte) : 1(Byte)
+1(Byte) : file_0f514c10-7ce5-4694-9f62-74e328bab6fd(String)
+```
+
 -    **Details**: Dictionary mapping byte keys to emoji-related data.
 
   ### Code: 73 OnEvent
@@ -209,18 +215,69 @@ file_90cbd832-2e87-4b5a-b7a7-e70390767ffe:11:security
 -    **Details**: Data for allowing download of a private avatar.
 
 
-  ### Code: 74 OnEvent
--    **Description**: Unknown Event
+  ### Code: 74 OnEvent <br>(Thanks to Minunn for giving info about that event.)
+-    **Description**: Portal,Pedestrial,Sticker,Print,Vrc+ gift drop 
 -    **Sender**: `0`
--    **Data Type**: `Dictionary<byte, Il2CppSystem.Object>`
--    **Contents**
+-    **Portal Content (Soon)**
   ```
-1 (Byte) : 1 (Byte)
-0 (Byte) : 2 (Byte)
-3 (Byte) : usr_c5fc3234-1f60-33c0-84f1-2c2cbc8ef8b5 (String)
-2 (Byte) : bcbc3645-4cdf-443d-9620-c2b631feb296 (String)
+Failed to serialize data Exception err: System.Runtime.Serialization.SerializationException: Invalid BinaryFormatter stream.
+System.InvalidCastException: Object must implement IConvertible.
 ```
--    **Details**: Unknown event with a dictionary of byte-to-object mappings.
+-    **Pedestrial Content**
+  ```
+1(Byte) : 0(Byte)
+0(Byte) : 1(Byte)
+3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
+2(Byte) : file_a373e52b-f1b2-4b9a-a571-f142fb4fed34(String)
+4(Byte) : System.Byte[](Byte[])
+5(Byte) : System.Byte[](Byte[])
+9(Byte) : False(Boolean)
+128(Byte) : 2(Byte)
+130(Byte) : System.String[](String[])
+8(Byte) : 0(Byte)
+```
+-    **Sticker Content**
+  ```
+1(Byte) : 0(Byte)
+0(Byte) : 2(Byte)
+3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
+2(Byte) : 2ef86598-1fcd-4660-9f24-73db2674ba30(String)
+4(Byte) : System.Byte[](Byte[])
+5(Byte) : System.Byte[](Byte[])
+9(Byte) : False(Boolean)
+128(Byte) : 1(Int32)
+129(Byte) : file_1cb49b08-6840-42f9-ac77-a1d366792953(String)
+130(Byte) : 1(Single)
+```
+-    **Print Content**
+  ```
+1(Byte) : 128(Byte)
+0(Byte) : 4(Byte)
+3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
+2(Byte) : 6e5a3ee4-030e-41a3-a91b-7d499997de21(String)
+4(Byte) : System.Byte[](Byte[])
+5(Byte) : System.Byte[](Byte[])
+9(Byte) : False(Boolean)
+128(Byte) : prnt_eb469bd1-036f-42dc-8ce0-840879b61aa4(String)
+129(Byte) : 1810003(Int32)
+130(Byte) : (String)
+131(Byte) : 0,75(Single)
+132(Byte) : System.Byte[](Byte[])
+133(Byte) : System.Byte[](Byte[])
+```
+-    **GiftDrop Content (Logged by Minnun)**
+  ```
+"0":0
+"1":2
+"2":"usr_463e6a09-d88f-4f4c-a2c5-139d6db384f2"
+"3":"usr_463e6a09-d88f-4f4c-a2c5-139d6db384f2"
+"4":[24,102,234,193,9,64,217,66,110,49,157,65]
+"5":[0,0,0,0,87,230,153,67,0,0,0,0]
+"128":"Dynamic_3"
+"129":0
+"130":42
+"131":30
+```
 
   ### Code: 74 OpRaise
 -    **Description**: SpawnPortal
