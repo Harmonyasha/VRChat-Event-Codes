@@ -46,7 +46,7 @@ This document is a collection of event codes and their details that I have disco
 ### Code: 7
 - **Description**: Serialization Unreliable (Object and Movement Sync)
 - **Data Type**: `BYTE[]`
-- **Details**: Unreliable serialization data for object and movement synchronization, transmitted as an array of bytes also you can use it as movement just send EV7 instead of EV12.
+- **Details**: Unreliable serialization data for object like new VRChat Drone and movement synchronization, transmitted as an array of bytes also you can use it as movement just send EV7 instead of EV12.
 
 ### Code: 8
 - **Description**: Voice Listeners
@@ -129,14 +129,37 @@ This document is a collection of event codes and their details that I have disco
 ### Code: 33
 -    **Description**: Moderation Action
 -    **Data Type**: `Dictinary<object,object>()`
+-    **Example Block Someone You Can Use That For Anti Block**
+  ```csharp
+        internal static void OnEventBlock(int photonid, bool Block)
+        {
+                Networking.OnEvent(33, new Dictionary<byte, object>
+                {
+                    {0,(byte)21},
+                    {1,photonid},
+                    {10,Block},
+                    {11,false}
+                },0);
+        }
+  ```
 -    **Details**: Event related to a moderation action.
 
 ### Code: 42 OpRaise
 -    **Description**: VR Mode State Broadcast
 -    **Data Type**: `Hashtable`
 -    **Content**:
-```
-inVRMode (String) : True Or False
+```csharp
+        internal static void RaiseVRMode(bool state)
+        {
+            var hashtable = new System.Collections.Hashtable();
+            hashtable.Add("inVRMode", state);
+            RaiseEvent(42, hashtable, new RaiseEventOptions
+            {
+                Caching = EEvent_Caching.DoNotCache,
+                Receiver = EEvent_Reciever.Others
+            }, default(SendOptions));
+        }
+
 ```
 -    **Details**: Broadcasts the VR mode state (e.g., whether the player is in VR mode) to others.
 
@@ -145,6 +168,17 @@ inVRMode (String) : True Or False
   ### Code: 43
 -    **Description**: ChatBox Message
 -    **Data Type**: `String`
+-    **Example**
+  ```csharp
+        internal static void RaiseSendChatboxMessage(string msg)
+        {
+            RaiseEvent(43, msg, new RaiseEventOptions
+            {
+                Caching = EEvent_Caching.DoNotCache,
+                Receiver = EEvent_Reciever.Others
+            }, default(SendOptions));
+        }
+  ```
 -    **Details**: Text message for the chatbox.
   
   ### Code: 44
@@ -241,43 +275,43 @@ System.InvalidCastException: Object must implement IConvertible.
   ```
 1(Byte) : 0(Byte)
 0(Byte) : 1(Byte)
-3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
-2(Byte) : file_a373e52b-f1b2-4b9a-a571-f142fb4fed34(String)
-4(Byte) : System.Byte[](Byte[])
-5(Byte) : System.Byte[](Byte[])
-9(Byte) : False(Boolean)
-128(Byte) : 2(Byte)
-130(Byte) : System.String[](String[])
+3(Byte) : "usr_d3a5c087-0332-4881-99f3-ac865854bb9d"(String)
+2(Byte) : "file_ec3543e4-6c6c-4470-b5a9-2b60dae1098a"(String)
+4(Byte) : [7E-CF-6B-C1-00-00-00-00-1A-B6-B5-C1](Byte[])
+5(Byte) : [00-00-00-00-55-3D-00-43-00-00-00-00](Byte[])
+9(Byte) : false(Boolean)
+128(Byte) : 0(Byte)
+130(Byte) : [](String[])
 8(Byte) : 0(Byte)
 ```
 -    **Sticker Content**
   ```
 1(Byte) : 0(Byte)
 0(Byte) : 2(Byte)
-3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
-2(Byte) : 2ef86598-1fcd-4660-9f24-73db2674ba30(String)
-4(Byte) : System.Byte[](Byte[])
-5(Byte) : System.Byte[](Byte[])
-9(Byte) : False(Boolean)
-128(Byte) : 1(Int32)
-129(Byte) : file_1cb49b08-6840-42f9-ac77-a1d366792953(String)
-130(Byte) : 1(Single)
+3(Byte) : "usr_d3a5c087-0332-4881-99f3-ac865854bb9d"(String)
+2(Byte) : "cd46af49-7a2e-4970-9a29-416a6d6cd6e2"(String)
+4(Byte) : 62-DF-8D-C1-8C-98-F0-3E-EA-C6-B3-C1(Byte[])
+5(Byte) : 80-96-0C-42-88-7B-4E-43-63-12-F7-40(Byte[])
+9(Byte) : false(Boolean)
+128(Byte) : 39(Int32)
+129(Byte) : "file_1916e65e-c761-4a83-9f7e-4bbfe311825d"(String)
+130(Byte) : 0.521622(Single)
 ```
 -    **Print Content**
   ```
 1(Byte) : 128(Byte)
 0(Byte) : 4(Byte)
-3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
-2(Byte) : 6e5a3ee4-030e-41a3-a91b-7d499997de21(String)
-4(Byte) : System.Byte[](Byte[])
-5(Byte) : System.Byte[](Byte[])
-9(Byte) : False(Boolean)
-128(Byte) : prnt_eb469bd1-036f-42dc-8ce0-840879b61aa4(String)
-129(Byte) : 1810003(Int32)
-130(Byte) : (String)
-131(Byte) : 0,75(Single)
-132(Byte) : System.Byte[](Byte[])
-133(Byte) : System.Byte[](Byte[])
+3(Byte) : "usr_924468d4-cab2-451c-baae-93ffc666c8fb"(String)
+2(Byte) : "fbfc1b63-b420-478b-8b7e-55493455a5a6"(String)
+4(Byte) : [15-DA-84-C1-34-86-2E-3F-0A-4E-A6-C1](Byte[])
+5(Byte) : [00-00-00-80-12-43-71-C3-00-00-00-80](Byte[])
+9(Byte) : false(Boolean)
+128(Byte) : "prnt_eb469bd1-036f-42dc-8ce0-840879b61aa4"(String)
+129(Byte) : 77110007(Int32) PhotonID
+130(Byte) : ""(String)
+131(Byte) : 0.75(Single)
+132(Byte) : [15-DA-84-C1-34-86-2E-3F-0A-4E-A6-C1](Byte[])
+133(Byte) : [00-00-00-80-12-43-71-C3-00-00-00-80](Byte[])
 ```
 -    **GiftDrop Content (Logged by Minnun)**
   ```
@@ -297,43 +331,42 @@ System.InvalidCastException: Object must implement IConvertible.
 Part1
 1(Byte) : 0(Byte)
 0(Byte) : 5(Byte)
-3(Byte) : usr_6e4226ed-64c5-400c-a818-8ff89b23f695(String)
-2(Byte) : b6e2fa49-2077-4475-bacb-d6dc3c157ed3(String)
-4(Byte) : System.Byte[](Byte[])
-5(Byte) : System.Byte[](Byte[])
-9(Byte) : False(Boolean)
-128(Byte) : 43710012(Int32)
-129(Byte) : System.Byte[](Byte[])
-130(Byte) : System.Byte[](Byte[])
-131(Byte) : System.Byte[](Byte[])
+3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
+2(Byte) : 1645d211-69d2-4385-936d-484e0a50ff08(String)
+4(Byte) : 65-3D-84-C1-C7-09-39-3F-78-E9-A5-C1(Byte[])
+5(Byte) : 00-00-00-80-DB-F8-BF-42-00-00-00-00(Byte[])
+9(Byte) : false(Boolean)
+128(Byte) : 77110005(Int32)
+129(Byte) : 00-00-80-3F-00-00-80-3F-00-00-80-3F(Byte[])
+130(Byte) : 00-00-80-3F-00-00-80-3F-00-00-80-3F(Byte[])
+131(Byte) : 00-00-80-3F-00-00-80-3F-00-00-80-3F(Byte[])
 
 Part2
 1(Byte) : 0(Byte)
 0(Byte) : 6(Byte)
-3(Byte) : usr_6e4226ed-64c5-400c-a818-8ff89b23f695(String)
-2(Byte) : e2827a6f-c923-4fcc-9848-546a57864f88(String)
-4(Byte) : System.Byte[](Byte[])
-5(Byte) : System.Byte[](Byte[])
-9(Byte) : False(Boolean)
-128(Byte) : 43710013(Int32)
+3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
+2(Byte) : 2ba9bd25-96d0-4d26-86b6-b5025fa16382(String)
+4(Byte) : 5B-DF-83-C1-AA-E4-31-3F-54-F3-A5-C1(Byte[])
+5(Byte) : 00-00-00-80-DC-F8-BF-42-00-00-00-80](Byte[])
+9(Byte) : false(Boolean)
+128(Byte) : 77110006](Int32)
 129(Byte) : 2(Byte)
-130(Byte) : 43710012(Int32)
+130(Byte) : 77110005(Int32)
 133(Byte) : 0(Byte)
-
 ```
 -    **Drone Despawn**
   ```
 Part1
 1(Byte) : 1(Byte)
 0(Byte) : 5(Byte)
-3(Byte) : usr_6e4226ed-64c5-400c-a818-8ff89b23f695(String)
-2(Byte) : e49e42fc-2b63-41b5-986f-b6b80d3996f1(String)
+3(Byte) : "usr_924468d4-cab2-451c-baae-93ffc666c8fb"(String)
+2(Byte) : "1645d211-69d2-4385-936d-484e0a50ff08"(String)
 
 Part2
 1(Byte) : 1(Byte)
 0(Byte) : 6(Byte)
-3(Byte) : usr_6e4226ed-64c5-400c-a818-8ff89b23f695(String)
-2(Byte) : 6f6b2982-ce14-4ec6-b9b8-93683ea4bc2f(String)
+3(Byte) : usr_924468d4-cab2-451c-baae-93ffc666c8fb(String)
+2(Byte) : 2ba9bd25-96d0-4d26-86b6-b5025fa16382(String)
 ```
   ### Code: 74 OpRaise
 -    **Description**: SpawnPortal
