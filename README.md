@@ -263,7 +263,7 @@ file_90cbd832-2e87-4b5a-b7a7-e70390767ffe:11:security
 -    **Details**: Data for allowing download of a private avatar.
 
 
-  ### Code: 74 OnEvent <br>(Thanks to Minunn for giving info about that event.)
+  ### Code: 74 OnEvent
 -    **Description**: Portal,Pedestrial,Sticker,Print,Vrc+ gift drop,Drone Spawn
 -    **Sender**: `0`
 -    **Portal Content (Soon)**
@@ -313,7 +313,7 @@ System.InvalidCastException: Object must implement IConvertible.
 132(Byte) : [15-DA-84-C1-34-86-2E-3F-0A-4E-A6-C1](Byte[])
 133(Byte) : [00-00-00-80-12-43-71-C3-00-00-00-80](Byte[])
 ```
--    **GiftDrop Content (Logged by Minnun)**
+-    **GiftDrop Content**
   ```
 "0":0
 "1":2
