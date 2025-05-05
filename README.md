@@ -8,6 +8,7 @@ This document is a collection of event codes and their details that I have disco
 - **Description**: Voice
 - **Data Type**: `BYTE[]`
 - **Details**: Represents voice data as an array of bytes.
+- **Update** No longer has actor number in BYTE[]
 
 ### Code: 4
 - **Description**: Master Sync
@@ -15,7 +16,7 @@ This document is a collection of event codes and their details that I have disco
 - **Details**: Synchronization data for the master.
 
 ### Code: 6
-- **Description**: RPC/Udon Trigger
+- **Description**: RPC Trigger
 - **Data Type**: `BYTE[]` (convertible to `String`)
 - Examples of decode
  ```c#
@@ -32,7 +33,6 @@ This document is a collection of event codes and their details that I have disco
             return parsedString;
         }
 //Out Examples
-//>> UdonSyncRunProgramAsRPC NameOfUdon
 //(Camera) >> ChangeVisibility
 //(Camera) >> TimerBloop
 //(Camera) >> PhotoCapture
@@ -48,10 +48,17 @@ This document is a collection of event codes and their details that I have disco
 - **Data Type**: `BYTE[]`
 - **Details**: Unreliable serialization data for object like new VRChat Drone and movement synchronization, transmitted as an array of bytes also you can use it as movement just send EV7 instead of EV12.
 
-### Code: 8
+### Code: 8 WAS
+- **sender**: 0
 - **Description**: Voice Listeners
 - **Data Type**: `INT32[]`
 - **Details**: Array of 32-bit integers indicating which players can hear the voice.
+
+### Code: 8 NOW
+- **sender**: 0
+- **Description**: Is Someone hear you?
+- **Data Type**: `bool`
+- **Details**: true/false
 
 ### Code: 10
 - **Description**: Udon (Unknown Purpose)
