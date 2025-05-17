@@ -90,6 +90,17 @@ This document is a collection of event codes and their details that I have disco
 - **Data Type**: `BYTE[]`
 - **Details**: Same as 12 but for Pickups.
 
+### Code: 18
+- **Description**: UdonSync
+- **Data Type**: `Dictionary`
+  - **Contents**:
+ ```
+1(Byte) : 613549406(Int32)
+0(Byte) : 2(Byte)
+2(Byte) : 450(Int32)
+```
+
+
 ### Code: 20 OnEvent
 - **Description**: Join World
 - **Sender**: `0`
