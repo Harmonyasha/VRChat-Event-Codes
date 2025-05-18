@@ -95,7 +95,7 @@ This document is a collection of event codes and their details that I have disco
 - **Data Type**: `Dictionary`
   - **Contents**:
  ```
-1(Byte) : 613549406(Int32) // string hash prob
+1(Byte) : 613549406(Int32) // hashed entrypoint
 0(Byte) : 2(Byte) // action
 2(Byte) : 450(Int32) //view id
 ```
