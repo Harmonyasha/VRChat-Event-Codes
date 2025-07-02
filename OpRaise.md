@@ -55,16 +55,16 @@ file_90cbd832-2e87-4b5a-b7a7-e70390767ffe:11:security
 -    -    **Portal Content**
  ```
   Key: 0 | Value: Enum (ÏÌÏÎÍÏÏÏÎÎÍÎÏÏÎÎÍÍÎÍÏÍÎ) = Portal
-  Key: 132 | Value: deb67zfe (System.String)
+  Key: 132 | Value: deb67zfe (System.String) //instance id
   Key: 1 | Value: Enum (ÌÏÍÌÌÎÍÏÍÎÎÎÎÎÌÍÎÍÏÏÌÏÎ) = Create
-  Key: 6 | Value: 30 (System.Int32)
+  Key: 6 | Value: 30 (System.Int32) //no idea
   Key: 7 | Value: False (System.Boolean)
   Key: 2 | Value: usr_8be02542-201d-40ee-8ea2-0df07aaac03b (System.String)
   Key: 8 | Value: Enum (ÎÏÌÍÌÍÏÌÏÍÏÍÍÏÏÏÍÎÍÏÏÏÍ) = All
-  Key: 4 | Value: System.Byte[]
+  Key: 4 | Value: System.Byte[] //position
       Length: 12 | Bytes:
       06-C2-26-42-00-80-ED-BA-4B-98-58-C2
-  Key: 5 | Value: System.Byte[]
+  Key: 5 | Value: System.Byte[] //rotation
       Length: 12 | Bytes:
       00-00-00-00-64-00-AC-42-00-00-00-00
 ```
@@ -73,10 +73,10 @@ file_90cbd832-2e87-4b5a-b7a7-e70390767ffe:11:security
  ```
   Key: 0 | Value: 09 (System.Byte) //Action ID
   Key: 1 | Value: 00 (System.Byte)
-  Key: 4 | Value: System.Byte[]
+  Key: 4 | Value: System.Byte[] //position
       Length: 12 | Bytes:
       29-49-3B-40-00-94-D6-3C-82-7C-A5-41
-  Key: 5 | Value: System.Byte[]
+  Key: 5 | Value: System.Byte[] //rotation
       Length: 12 | Bytes:
       88-9F-B3-43-E3-94-6F-42-10-52-B3-43 
   Key: 8 | Value: 00 (System.Byte)
@@ -98,10 +98,10 @@ Il2Dictionary<System.Byte, Il2CppSystem.Object>
   Key: 0 | Value: 08 (System.Byte) //Action ID
   Key: 1 | Value: 00 (System.Byte)
   Key: 2 | Value: (System.String)
-  Key: 4 | Value: System.Byte[]
+  Key: 4 | Value: System.Byte[] //position
       Length: 12 | Bytes:
       E7-95-46-C1-4F-81-88-41-83-0E-E5-41
-  Key: 5 | Value: System.Byte[]
+  Key: 5 | Value: System.Byte[] //rotation
       Length: 12 | Bytes:
       56-E0-6C-42-1D-0B-DF-3A-66-D8-AF-42
   Key: 8 | Value: 00 (System.Byte)
@@ -117,10 +117,10 @@ Il2Dictionary<System.Byte, Il2CppSystem.Object>
   Key: 0 | Value: 08 (System.Byte)
   Key: 1 | Value: 00 (System.Byte)
   Key: 2 | Value: (System.String)
-  Key: 4 | Value: System.Byte[]
+  Key: 4 | Value: System.Byte[] //position
       Length: 12 | Bytes:
       2D-4C-13-42-60-A8-88-3F-48-62-64-C2
-  Key: 5 | Value: System.Byte[]
+  Key: 5 | Value: System.Byte[] //rotation
       Length: 12 | Bytes:
       5F-14-08-BA-8E-FF-33-43-7F-5F-08-3B
   Key: 8 | Value: 00 (System.Byte)
