@@ -24,7 +24,7 @@ Was updated with Calude AI to fix my english and improve some information about 
 | Code | What it is | Where |
 |---|---|---|
 | `1` | Voice | [Both](Both.md#code-1) |
-| `2` | Force disconnect | [OnEvent](OnEvent.md#code-2) |
+| `2` | Show Message | [OnEvent](OnEvent.md#code-2) |
 | `3` | Sync request, like `5` | [OnEvent](OnEvent.md#code-3) |
 | `4` | Master sync | [UnSorted](UnSorted.md#code-4) |
 | `5` | Ask master for a data sync | [OnEvent](OnEvent.md#code-5) |
