@@ -13,7 +13,7 @@ Incoming events, hooked at `IPhotonPeerListener.OnEvent(EventData)`. The code li
 
 ### Code: 2
 - **Description**: Message
-- **Data Type**: not captured
+- **Data Type**: System.String
 - **Details**: Show message on screen
 
 ### Code: 3
